@@ -1,0 +1,159 @@
+import { Box, Button, Card, Container, FormControl, InputLabel, MenuItem, Rating, Select, Typography } from '@mui/material'
+import React from 'react'
+import { Div, Section } from '../../conponents/Div/Div'
+import all_product from '../../assets/all_product'
+
+const Kids = () => {
+    const [sort, setSort] = React.useState('');
+
+  const handleChange = (event) => {
+    setSort(event.target.value);
+  };
+
+  return (
+    <Box  className='header'>
+    <Container className='py-10' >
+        {/* banner offer box */}
+      <Section className="shop-home-reverse h-full rounded-md px-8  ">
+          <Box className="grid grid-cols-1 lg:grid-cols-2 items-center ">
+            <Div
+              item
+              xs={12}
+              md={6}
+              className="typography text-center lg:text-left"
+            >
+              
+              <Typography
+                sx={{ fontSize: { xs: 40, md:50, lg: 60 } }}
+                className=""
+              >
+                FLAT 50% OFF
+              </Typography>
+              <Typography
+                sx={{ fontSize: { xs: 20, md:25, lg: 30 } }}
+                className=""
+              >
+                <span>12</span> Hourse <span className="">20</span> Mins
+              </Typography>
+              <Button className="shop-button " sx={{ mt: 4 }}>
+                Explore Now
+              </Button>
+            </Div>
+            <Div
+              item
+              xs={12}
+              md={6}
+              className="typography flex align-middle justify-center lg:justify-end pt-2   "
+            >
+              <img
+                src={require("../../assets/banner_kid.png")}
+                className="w-48"
+              />
+            </Div>
+          </Box>
+      </Section>
+
+
+      {/* mens collections */}
+      <Section className="h-ful  pt-10">
+<Div className='my-2 mb-5'>
+    <Box className="flex justify-between">
+      <Typography
+        className="typography"
+      >
+        <span style={{fontWeight:800}}>Showing 1- 12</span> out of Products
+      </Typography>
+
+      <Div>
+      <FormControl className='typography' sx={{ m: 1, minWidth: 120  }} size="small">
+      {/* <InputLabel id="demo-select-small-label">sort</InputLabel> */}
+      <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={sort}
+          onChange={handleChange}
+        >
+        
+        <MenuItem className='typography' value={10}>Ascending</MenuItem>
+        <MenuItem className='typography' value={20}>Descending</MenuItem>
+      </Select>
+    </FormControl>
+
+      </Div>
+    </Box>
+</Div>
+
+      <Box className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 pb-20">
+              {all_product?.map((collection, index) =>
+              {
+                if(collection?.category === "kid"){
+                    return(
+                        <Card
+                          key={index}
+                          className="shadow-sm shop-card shadow-slate-300 "
+                        >
+                          <Div className="card-img">
+                            <img src={collection?.image} alt={collection?.name} />
+                          </Div>
+                          <Div className="p-3">
+                            <Typography className="typography card-title">
+                              {collection?.name}
+                            </Typography>
+                            
+                            <Div className="flex items-center justify-between">
+                              <Div>
+                                <Typography className="typography-sub">Price</Typography>
+                              </Div>
+                            <Div className="gap-3 flex items-center">
+                                <del className="typography-sub">
+                                  ₹ {collection?.old_price}
+                                </del>
+                                <span className="typography-sub">
+                                  ₹ {collection?.new_price}
+                                </span>
+                              </Div>
+                            </Div>
+                            
+                            
+                            <Div className="flex items-center justify-between">
+                              <Div>
+                                <Typography className="typography-sub">Ratings</Typography>
+                              </Div>
+                              <Rating
+                                  name="size-small"
+                                  defaultValue={2}
+                                  size="small"
+                                  readOnly
+                                />
+                            </Div>
+
+                            
+                            <Div className="flex items-center justify-between">
+                              <Div>
+                                <Typography className="typography-sub">Reviews</Typography>
+                              </Div>
+                            <Div>
+                            <Typography className="typography-sub">20</Typography>
+
+                            </Div>
+                            </Div>
+
+
+                          </Div>
+                        </Card>
+                     
+                  )
+                }
+              })}
+            </Box>
+      </Section>
+
+      <Div className='flex items-center justify-center'>
+        <Button className='typography border px-5 py-2 rounded-full cursor-pointer more-button '>Explore More</Button>
+      </Div>
+    </Container>
+    </Box>
+  )
+}
+
+export default Kids

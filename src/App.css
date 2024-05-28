@@ -1,0 +1,194 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --bg-color-light: #eee;
+  --text-color-light: rgb(51, 51, 51);
+  --bg-color-dark: rgb(51, 51, 51);
+  --text-color-dark: #fff;
+  --pink : rgb(255, 0, 149);
+  --light-pink : rgba(255, 0, 149, 0.1);
+  --dark-pink : rgb(55, 0, 32);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box ;
+  font-family: "Poppins", sans-serif !important;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  transition: all 0.3s ease-in-out !important; /* Added 's' after 0.3 */
+
+}
+
+
+/* header section css */
+.header{
+  background-color: white !important; ;
+  color: var(--text-color-dark) !important;
+  box-shadow: none !important;
+}
+
+.header-selected{
+  color: var(--pink) !important;
+}
+
+
+.header.dark-theme {
+  background-color: var(--bg-color-dark) !important;;
+  color: var(--text-color-light) !important;
+}
+
+.typography{
+  color: var(--text-color-light) !important;
+}
+.typography.dark-theme{
+  color: var(--text-color-dark) !important ;
+
+}
+.typography-sub{
+  color: var(--text-color-light) !important;
+  font-size: 12px !important;
+}
+.typography-sub.dark-theme{
+  color: var(--text-color-dark) !important ;
+
+}
+
+/* shop section css */
+.shop-home{
+  background:linear-gradient(180deg, var(--light-pink ) 0%, rgba(255,255,255,1) 70%) !important ;
+  color: var(--text-color-dark)  !important;
+}
+
+.shop-home.dark-theme{
+  background: linear-gradient(180deg, rgb(94, 0, 55) 0%, var(--bg-color-dark) 74%)  !important ;
+  color: var(--text-color-light) !important ;
+}
+
+.shop-home-reverse{
+  background:linear-gradient(270deg, rgb(255,255,255,1) 20%, var(--light-pink) 70% ) !important ;
+  color: var(--text-color-dark)  !important;
+}
+
+.shop-home-reverse.dark-theme{
+  background: linear-gradient(270deg,  var(--bg-color-dark) 20% , var(--dark-pink) 60%)  !important ;
+  color: var(--text-color-light) !important ;
+}
+
+.shop-button{
+  color: var(--text-color-dark) !important ;
+  background-color: var(--pink) !important;
+  padding: 10px  20px !important;
+}
+
+.shop-button.dark-theme{
+  color: var(--text-color-dark) !important;
+  background-color: var(--pink) !important;
+  
+}
+
+.shop-card{
+  color: var(--text-color-dark) !important ;
+  background-color: rgb(255, 255, 255) !important;
+
+  cursor: pointer;
+
+}
+
+.card-title{
+  margin-bottom: 10px !important;
+}
+
+.shop-card:hover .card-title{
+  color: var(--pink) !important;
+
+}
+
+.shop-card.dark-theme{
+  color: var(--text-color-dark) !important;
+  background-color:rgba(192, 0, 192, 0.129) !important;
+  
+}
+
+.shop-card.dark-theme :hover .card-title{
+  color: var(--pink) !important;
+  
+}
+
+.shop-card .card-img {
+  overflow: hidden !important;
+  /* transform: scale(1) !important; */
+
+}
+
+.shop-card:hover .card-img img {
+  transform: scale(1.2) !important;
+}
+
+
+/* Section All Title css */
+.section-title{
+  text-transform: uppercase !important;
+  text-align: center !important;
+  font-size: 30px !important;
+  padding: 20px 0px !important;
+  position: relative ;
+  margin-bottom: 80px !important;
+}
+
+@keyframes section-title {
+  from {
+    left: -100%;
+    transform: translateX(0%);
+
+  }
+  to {
+    left: 50% ;
+    transform: translateX(-50%);
+  }
+
+}
+
+.section-title::after{
+  position: absolute ;
+  content: '' ;
+  width: 100px ;
+  height: 2px ;
+  left: 50% ;
+  bottom: -10px ;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background-color: var(--pink) ;
+  animation: section-title 1s linear forwards; 
+}
+
+
+/* more button css */
+.more-button{
+  /* color: var(--text-color-dark) !important ; */
+  background-color: var(--light-pink) !important;
+
+  padding: 10px  20px !important;
+  border-radius: 25px !important;
+}
+
+.more-button:hover{
+  color: var(--text-color-dark) !important ;
+  background-color: var(--pink) !important;
+  padding: 10px  20px !important;
+  
+}
+
+
+/* select sort */
+#demo-select-small{
+  border-radius: 20px !important;
+}
+
+/* view products */
+
